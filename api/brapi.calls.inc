@@ -92,7 +92,7 @@ function brapi_call_wrapper($call_name) {
   catch (BrapiException $be) {
     // Drupal alter.
     $output = $be->getJsonOutput();
-    $output['debug'] .= "Alter hook: hook_brapi_{$alter_name}_brapi_error_alter";
+    $output['debug'] = ($output['debug'] ?? '') . "Alter hook: hook_brapi_{$alter_name}_brapi_error_alter";
     drupal_alter('brapi_' . $alter_name . '_brapi_error', $output);
   }
   catch (Exception $e) {
@@ -101,7 +101,7 @@ function brapi_call_wrapper($call_name) {
       500,
       $e->getMessage()
     );
-    $output['debug'] .= "Alter hook: hook_brapi_{$alter_name}_error_alter";
+    $output['debug'] = ($output['debug'] ?? '') . "Alter hook: hook_brapi_{$alter_name}_error_alter";
     drupal_alter('brapi_' . $alter_name . '_error', $output);
   }
 
