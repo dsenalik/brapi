@@ -3555,7 +3555,7 @@ function brapi_v1_get_cvterm_filter($cvterm_settings) {
     }
   }
   // Get from relationship.
-  if ($cvterm_settings['parent_cvterms']) {
+  if ((array_key_exists('parent_cvterms', $cvterm_settings)) and ($cvterm_settings['parent_cvterms'])) {
     $cvterm_refs = explode(',', $cvterm_settings['parent_cvterms']);
     foreach ($cvterm_refs as $cvterm_ref) {
       if (preg_match('/(\d+)\D*$/', $cvterm_ref, $matches)) {
