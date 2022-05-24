@@ -534,7 +534,7 @@ function brapi_terms_autocomplete($string) {
   $matches = array();
 
   if ($string) {
-    // Get last term entered after the last coma for completion.
+    // Get last term entered after the last comma for completion.
     $items = array_filter(array_map(
       function ($a) {
         return trim(str_replace("\\,", ',', $a));
@@ -601,7 +601,7 @@ function brapi_filter_autocomplete($data_type, $field, $string) {
       && is_array($field_fetcher)
       && ('cvterm' == $field_fetcher['field_type'])) {
 
-    // Get last term entered after the last coma for completion.
+    // Get last term entered after the last comma for completion.
     $items = array_map('trim', explode(',', $string));
     $last_item = array_pop($items);
     $prefix = implode(', ', $items);
