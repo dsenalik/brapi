@@ -26,7 +26,7 @@ REQUIREMENTS
 This module requires the following modules:
 
  * Drupal 7.x
- * Tripal 7.x-2.x, 7.x-3.x (http://www.drupal.org/project/tripal)
+ * Tripal 7.x-2.x (3.x not tested yet) (http://www.drupal.org/project/tripal)
 
 
 QUICK START
